@@ -1,0 +1,26 @@
+[
+    {
+        "name": "pizza",
+        "amount": 289.0,
+        "category": "food",
+        "date": "2026-09-21"
+    },
+    {
+        "name": "pens",
+        "amount": 200.0,
+        "category": "stationary",
+        "date": "2026-09-21"
+    },
+    {
+        "name": "momos",
+        "amount": 200.0,
+        "category": "food",
+        "date": "2026-09-21"
+    },
+    {
+        "name": "book",
+        "amount": 549.0,
+        "category": "stationary",
+        "date": "2026-09-22"
+    }
+]
