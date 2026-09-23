@@ -60,3 +60,28 @@ This project helped me practice:
 ## 🎯 Project Goal
 
 The goal of this project was to build a practical Python application while learning programming fundamentals and gradually adding real-world functionality.
+
+## 🌐 Streamlit Web Version
+
+The project also includes a Streamlit web interface.
+
+### Features
+
+- Add expenses
+- View expenses
+- Calculate total spending
+- Delete expenses
+- Search expenses by category
+- Category-wise spending summary
+- Monthly spending summary
+- Edit expenses
+- Data persistence using JSON
+- Spending visualization using charts
+
+### ▶️ Run the Web App
+
+Install Streamlit:
+
+```bash
+pip install streamlit
+
