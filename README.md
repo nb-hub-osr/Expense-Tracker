@@ -85,3 +85,10 @@ Install Streamlit:
 ```bash
 pip install streamlit
 
+'''markdown
+Run the application:
+
+```bash
+streamlit run app.py
+
+The application will open in the browser
