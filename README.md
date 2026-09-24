@@ -85,7 +85,6 @@ Install Streamlit:
 ```bash
 pip install streamlit
 
-'''markdown
 Run the application:
 
 ```bash
