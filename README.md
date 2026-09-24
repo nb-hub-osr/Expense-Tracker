@@ -101,13 +101,13 @@ The application will open in the browser
 ### MAIN DASHBOARD:
 <img width="638" height="332" alt="Screenshot 2026-09-24 202855" src="https://github.com/user-attachments/assets/b849c659-3526-4385-b7ab-bc79f677f1e4" />
 
-###Add Expense :
+### Add Expense :
 <img width="634" height="322" alt="Screenshot 2026-09-24 202915" src="https://github.com/user-attachments/assets/bc7a79bf-3a88-426b-b284-a7cf8b25c9b8" />
 
-###View Expense:
+### View Expense:
 <img width="634" height="314" alt="Screenshot 2026-09-24 202949" src="https://github.com/user-attachments/assets/8c6f9fad-6e4e-4481-a95c-488e01b1ee0d" />
 
-###Category Summary:
+### Category Summary:
 <img width="628" height="320" alt="Screenshot 2026-09-24 203023" src="https://github.com/user-attachments/assets/253f95c5-a42a-4fbb-8488-b88b3adfab97" />
 
 
