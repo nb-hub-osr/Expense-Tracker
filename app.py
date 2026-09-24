@@ -91,31 +91,60 @@ if option == "Dashboard":
         "📊 Average Expense",
         f"₹{average_expense:.2f}"
     )
+
+    category_total = {}
+
+    for expense in expenses:
+      category = expense["category"]
+      amount = expense["amount"]
+
+      if category in category_total:
+        category_total[category] += amount
+      else:
+        category_total[category] = amount
+
+    if category_total:
+      st.subheader("📊 Spending by Category")
+      st.bar_chart(category_total)
     
 # ==================================================
 # ADD EXPENSE
 # ==================================================
-
 if option == "Add Expense":
 
     st.header("➕ Add Expense")
 
-    name = st.text_input("Expense name")
+    col1, col2 = st.columns(2)
 
-    amount = st.number_input(
-        "Amount",
-        min_value=0.0,
-        step=1.0
-    )
+    with col1:
+        name = st.text_input("Expense name")
 
-    category = st.text_input("Category")
+        category = st.selectbox(
+    "Category",
+    [
+        "Food",
+        "Travel",
+        "Shopping",
+        "Education",
+        "Entertainment",
+        "Bills",
+        "Other"
+    ]
+)
 
-    expense_date = st.date_input(
-        "Date",
-        value=date.today()
-    )
+    with col2:
+        amount = st.number_input(
+            "Amount",
+            min_value=0.0,
+            step=1.0
+        )
 
-    if st.button("Add Expense"):
+        expense_date = st.date_input(
+            "Date",
+            value=date.today()
+        )
+
+    if st.button("💾 Add Expense"):
 
         if name and category and amount > 0:
 
@@ -135,11 +164,9 @@ if option == "Add Expense":
         else:
             st.error("Please fill all fields correctly.")
 
-
 # ==================================================
 # VIEW EXPENSES
 # ==================================================
-
 elif option == "View Expenses":
 
     st.header("👀 All Expenses")
@@ -150,20 +177,35 @@ elif option == "View Expenses":
 
     else:
 
-        for i, expense in enumerate(expenses, start=1):
+        st.dataframe(
+            expenses,
+            use_container_width=True
+        )
 
-            st.write(f"### Expense {i}")
+    categories = ["All"]
 
-            col1, col2, col3, col4 = st.columns(4)
+    for expense in expenses:
+      if expense["category"] not in categories:
+        categories.append(expense["category"])
 
-            col1.write(f"**Name**\n{expense['name']}")
-            col2.write(f"**Amount**\n₹{expense['amount']}")
-            col3.write(f"**Category**\n{expense['category']}")
-            col4.write(f"**Date**\n{expense['date']}")
+    selected_category = st.selectbox(
+          "Filter by category",
+    categories
+)
 
-            st.divider()
+    if selected_category == "All":
+       filtered_expenses = expenses
+    else:
+        filtered_expenses = [
+        expense
+        for expense in expenses
+         if expense["category"] == selected_category
+    ]
 
-
+    st.dataframe(
+    filtered_expenses,
+    use_container_width=True
+)
 # ==================================================
 # TOTAL SPENDING
 # ==================================================
