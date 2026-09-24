@@ -87,7 +87,8 @@ pip install streamlit
 ```
 
 Run the application :
-streamlit run app.py
+
+python -m streamlit run app.py
 
 The application will open in the browser
 
